@@ -1,8 +1,6 @@
 name: AQI_LEVEL
 
-on:
-  schedule:
-    - cron: '* * * * *'
+on: [push]
 
 
 # on:
