@@ -3,11 +3,8 @@ name: AQI_LEVEL
 on:
   schedule:
     - cron: '0 13-24/2 * * *'
-    - cron: '0 00-04/2 * * *'
-
 jobs:
   build:
-
     runs-on: ubuntu-20.04
     strategy:
       matrix:
