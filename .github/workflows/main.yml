@@ -2,7 +2,6 @@ name: AQI_LEVEL
 
 on:
   schedule:
-    - cron: '0 13-24 * * *'
     - cron: '0 0-4 * * *'
 # on:
 #   schedule:
