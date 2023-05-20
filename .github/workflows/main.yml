@@ -2,13 +2,13 @@ name: AQI_LEVEL
 
 on:
   schedule:
-    - cron: '0 13-23 * * *'
-    - cron: '0 0-4 * * *'
+    - cron: '* * * * *'
+
 
 # on:
 #   schedule:
-#     - cron: '30 5 * * 1,3'
-#     - cron: '30 5 * * 2,4'
+#     - cron: '0 13-23 * * *'
+#     - cron: '0 0-4 * * *'
 
 jobs:
   build:
