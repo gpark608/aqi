@@ -16,4 +16,4 @@ data = {
 response = requests.post(url, data=data)
 tokens = response.json()
 
-print(tokens)
+print(tokens[access_token])
