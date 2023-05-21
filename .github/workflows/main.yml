@@ -1,8 +1,8 @@
 name: AQI_LEVEL
-on:
-  schedule:
-    - cron: '*/20 13-23 * * *'
-    - cron: '*/20 0-7 * * *'
+# on:
+#   schedule:
+#     - cron: '*/20 13-23 * * *'
+#     - cron: '*/20 0-7 * * *'
 on: [push]
   
 jobs:
