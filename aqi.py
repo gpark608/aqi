@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import sys
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -59,6 +60,9 @@ data = {
 
 response = requests.post(url, headers=headers, data=data)
 print(response)
+if response.status_code == 200:
+    sys.exit(0)
+sys.exit(1)
 
 
 
