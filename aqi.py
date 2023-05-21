@@ -35,9 +35,9 @@ def get_aqi_info():
 
     aqi_response = requests.get(aqi_url, params=aqi_params)
     aqi_data = aqi_response.json()
-
-    AQI_LEVEL, AQI_DESC=lookup_aqius(aqi_data['data']['current']['pollution']['aqius'])
-    return AQI_LEVEL, AQI_DESC
+    AQI_VALUE = aqi_data['data']['current']['pollution']['aqius']
+    AQI_LEVEL, AQI_DESC=lookup_aqius(AQI_VALUE)
+    return AQI_VALUE, AQI_LEVEL, AQI_DESC
 
 
 def get_kakao_access_key():
@@ -54,7 +54,7 @@ def get_kakao_access_key():
     return ACCESS_KEY
 
 def send_message():
-    AQI_LEVEL, AQI_DESC=get_aqi_info()
+    AQI_VALUE, AQI_LEVEL, AQI_DESC=get_aqi_info()
     ACCESS_KEY=get_kakao_access_key()
     
     url = 'https://kapi.kakao.com/v2/api/talk/memo/default/send'
@@ -64,7 +64,7 @@ def send_message():
     }
     template_object={
             "object_type": "text",
-            "text": f"AQI_LEVEL: {AQI_LEVEL}\n\n{AQI_DESC}",
+            "text": f"AQI_LEVEL: {AQI_LEVEL} ({AQI_VALUE})\n\n{AQI_DESC}",
             "link": { 
                         "web_url":"https://www.iqair.com/ca/canada/alberta/calgary",
                         "mobile_web_url":"https://www.iqair.com/ca/canada/alberta/calgary"
