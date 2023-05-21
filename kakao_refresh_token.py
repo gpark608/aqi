@@ -5,15 +5,19 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-KAKAO_REFRESH_TOKEN = os.getenv('KAKAO_REFRESH_TOKEN')
 KAKAO_REST_API_KEY = os.getenv('KAKAO_REST_API_KEY')
-url = "https://kauth.kakao.com/oauth/token"
-data = {
-    "grant_type": "refresh_token",
-    "client_id": KAKAO_REST_API_KEY,
-    "refresh_token": KAKAO_REFRESH_TOKEN
-}
-response = requests.post(url, data=data)
-tokens = response.json()
+KAKAO_AUTH_CODE = os.getenv('KAKAO_AUTH_CODE')
+redirect_uri = 'http://localhost/oauth'
+url_token = 'https://kauth.kakao.com/oauth/token'
 
+
+data = {
+    'grant_type':'authorization_code',
+    'client_id':KAKAO_REST_API_KEY,
+    'redirect_uri':redirect_uri,
+    'code': KAKAO_AUTH_CODE,
+}
+
+response = requests.post(url_token, data=data)
+tokens = response.json()
 print(tokens)

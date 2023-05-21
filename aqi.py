@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 AQI_TOKEN = os.getenv('AQI_TOKEN')
-KAKAO_TOKEN = os.getenv('KAKAO_TOKEN')
+ACCESS_KEY = os.getenv('ACCESS_KEY')
 def lookup_aqius(aqius_value):
     # range look-up:
     for (start, end), aqius in aqius_range.items():
@@ -41,7 +41,7 @@ AQI_DESC=lookup_aqius(aqi_data['data']['current']['pollution']['aqius'])[1]
 url = 'https://kapi.kakao.com/v2/api/talk/memo/default/send'
 headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
-    'Authorization': f'Bearer {KAKAO_TOKEN}'
+    'Authorization': f'Bearer {ACCESS_KEY}'
 }
 template_object={
         "object_type": "text",

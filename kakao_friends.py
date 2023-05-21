@@ -4,9 +4,9 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-KAKAO_TOKEN = os.getenv('KAKAO_TOKEN')
+ACCESS_KEY = os.getenv('ACCESS_KEY')
 def getFriendsList():
-    header = {"Authorization": 'Bearer ' + KAKAO_TOKEN}
+    header = {"Authorization": 'Bearer ' + ACCESS_KEY}
     url = "https://kapi.kakao.com/v1/api/talk/friends" #친구 정보 요청
 
     result = json.loads(requests.get(url, headers=header).text)
