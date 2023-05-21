@@ -64,7 +64,7 @@ def send_message():
     }
     template_object={
             "object_type": "text",
-            "text": f"AQI_LEVEL: {AQI_LEVEL} ({AQI_VALUE})\n\n{AQI_DESC}",
+            "text": f"AQI_LEVEL: \033[1;32m {AQI_LEVEL} ({AQI_VALUE})\n\n{AQI_DESC}",
             "link": { 
                         "web_url":"https://www.iqair.com/ca/canada/alberta/calgary",
                         "mobile_web_url":"https://www.iqair.com/ca/canada/alberta/calgary"
