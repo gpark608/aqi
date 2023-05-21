@@ -20,4 +20,4 @@ data = {
 
 response = requests.post(url_token, data=data)
 tokens = response.json()
-print(tokens)
+print(tokens['refresh_token'])

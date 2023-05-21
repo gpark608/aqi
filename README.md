@@ -1,7 +1,6 @@
 #### AUTH KEY (kakao_auth_key.py) 받고 
 #### REFRESH_TOKEN (kakao_refresh_token.py)받고
-#### ACCESS_KEY (kakao_access_key.py)받고
-#### Github Actions Secret 에서 ACCESS_KEY update 하기
+#### Github Actions Secret 에서 REFRESH_TOKEN, KAKAO_REST_API_KEY update 하기
 
 ```
 ENV Variables

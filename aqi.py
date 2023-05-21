@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 AQI_TOKEN = os.getenv('AQI_TOKEN')
-ACCESS_KEY = os.getenv('ACCESS_KEY')
+
 def lookup_aqius(aqius_value):
     # range look-up:
     for (start, end), aqius in aqius_range.items():
@@ -38,6 +38,20 @@ aqi_data = aqi_response.json()
 
 AQI_LEVEL=lookup_aqius(aqi_data['data']['current']['pollution']['aqius'])[0]
 AQI_DESC=lookup_aqius(aqi_data['data']['current']['pollution']['aqius'])[1]
+
+KAKAO_REFRESH_TOKEN = os.getenv('KAKAO_REFRESH_TOKEN')
+KAKAO_REST_API_KEY = os.getenv('KAKAO_REST_API_KEY')
+url = "https://kauth.kakao.com/oauth/token"
+data = {
+    "grant_type": "refresh_token",
+    "client_id": KAKAO_REST_API_KEY,
+    "refresh_token": KAKAO_REFRESH_TOKEN
+}
+response = requests.post(url, data=data)
+tokens = response.json()
+
+ACCESS_KEY=tokens['access_token']
+
 
 url = 'https://kapi.kakao.com/v2/api/talk/memo/default/send'
 headers = {

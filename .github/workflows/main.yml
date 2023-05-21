@@ -23,6 +23,7 @@ jobs:
     - name: run aqi.py
       env: 
         AQI_TOKEN: ${{ secrets.AQI_TOKEN }}
-        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+        KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+        KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
       run: python aqi.py
         
