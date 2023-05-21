@@ -22,7 +22,7 @@ def lookup_aqius(aqius_value):
         if start <= aqius_value <= end:
             return aqius
 
-    return "Unknown"
+    return "Unknown","Unknown"
 
 def get_aqi_info():
     aqi_url = 'http://api.airvisual.com/v2/city'
