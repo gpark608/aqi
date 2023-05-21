@@ -1,4 +1,6 @@
-#### AUTH KEY (kakao_auth_key.py) 받고 TOKEN (kakao_token.py)받고
+#### AUTH KEY (kakao_auth_key.py) 받고 
+#### REFRESH_TOKEN (kakao_token.py)받고
+#### ACCESS_KEY (kakao_refresh.py)받고
 #### Github Actions Secret 에서 KAKAO_TOKEN update 하기
 
 ```
