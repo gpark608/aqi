@@ -36,7 +36,7 @@ def get_aqi_info():
     aqi_response = requests.get(aqi_url, params=aqi_params)
     aqi_data = aqi_response.json()
 
-    AQI_LEVEL,AQI_DESC=lookup_aqius(aqi_data['data']['current']['pollution']['aqius'])
+    AQI_LEVEL, AQI_DESC=lookup_aqius(aqi_data['data']['current']['pollution']['aqius'])
     return AQI_LEVEL, AQI_DESC
 
 
