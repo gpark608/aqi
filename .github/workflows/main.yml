@@ -3,7 +3,8 @@ on:
   schedule:
     - cron: '*/20 13-23 * * *'
     - cron: '*/20 0-7 * * *'
-    
+on: [push]
+  
 jobs:
   build:
     runs-on: ubuntu-20.04
