@@ -20,4 +20,4 @@ data = {
 
 response = requests.post(url_token, data=data)
 tokens = response.json()
-print(tokens['refresh_token'])
+print("KAKAO_AUTH_CODE="+tokens['refresh_token'])
